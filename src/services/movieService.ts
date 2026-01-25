@@ -11,7 +11,7 @@ interface FetchMoviesParams{
 interface FetchMoviesResponse{
     page:number,
     results: Movie[],
-    total_page:number,
+    total_pages:number,
     total_results:number
 }
 
@@ -19,7 +19,7 @@ interface FetchMoviesResponse{
 const myKey = import.meta.env.VITE_TMDB_TOKEN;
 
 export async function fetchMovies ({page = 1,language = 'en-US' ,include_adult = false, query}: FetchMoviesParams): Promise<FetchMoviesResponse> {
-    try{const response = await axios({
+    try{const response = await axios<FetchMoviesResponse>({
         method:'GET',
         url:'https://api.themoviedb.org/3/search/movie',
         params:{

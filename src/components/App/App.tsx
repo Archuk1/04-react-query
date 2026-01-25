@@ -46,6 +46,7 @@ function App() {
 
   const closeModal = () => {
     setIsOpenModal(false)
+    setSelectedMovie(null)
   }
 
   return (<div className={css.app}>
