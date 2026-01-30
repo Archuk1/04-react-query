@@ -2,7 +2,7 @@ import axios from "axios"
 import type { Movie } from "../types/movie"
 
 interface FetchMoviesParams{
-    page?:number,
+    page:number,
     language?:string,
     include_adult?:boolean,
     query:string 
